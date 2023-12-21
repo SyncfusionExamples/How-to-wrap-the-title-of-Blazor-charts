@@ -1,14 +1,14 @@
 # How-to-wrap-the-title-of-Blazor-charts
 
-This article explains how to wrap the chart title in Blazor chart.
+This article explains how to wrap the chart title in Blazor Chart Component.
 
 **Chart title wrap using TextOverFlow property**
 
-Title of the [Blazor chart](https://www.syncfusion.com/blazor-components/blazor-charts) project an easier understanding of the usage. I case of having multi-line title, you can wrap it by setting the [TextOverFlow](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.TextOverflow.html) property in ChartTitleStyle to [Wrap](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.TextOverflow.html#Syncfusion_Blazor_Charts_TextOverflow_Wrap).
+The title of the [Blazor Chart](https://www.syncfusion.com/blazor-components/blazor-charts) is crucial for better comprehension of its usage. In the case of having a multi-line title, you can wrap it by setting the [TextOverFlow](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.TextOverflow.html) property in [ChartTitleStyle](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartTitleStyle.html#Syncfusion_Blazor_Charts_ChartTitleStyle__ctor) to [Wrap](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.TextOverflow.html#Syncfusion_Blazor_Charts_TextOverflow_Wrap). 
 
 The following code example illustrates this.
 
-**C#**
+**Index.razor**
 
 ```cshtml
 
@@ -17,7 +17,9 @@ The following code example illustrates this.
 <SfChart Width="500px" Title="This Example shows how to wrap the chart title to next line in case of overflow">
 
     <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
+
     <ChartTitleStyle TextOverflow="TextOverflow.Wrap"></ChartTitleStyle>
+
     <ChartSeriesCollection>
         <ChartSeries DataSource="@MedalDetails" XName="X" YName="Y" Type="ChartSeriesType.Column" >
         </ChartSeries>
@@ -46,7 +48,7 @@ The following code example illustrates this.
 
 ```
 
-The following screenshot illustrate the output of the above code snippet.
+The following screenshot illustrates the output of the above code snippet.
 
 **Output:**
 
@@ -61,4 +63,3 @@ You can refer to our [Blazor Chart feature tour](https://www.syncfusion.com/blaz
 For current customers, you can check out our components from the [License and Downloads](https://www.syncfusion.com/sales/teamlicense) page. If you are new to Syncfusion, you can try our 30-day [free trial](https://www.syncfusion.com/downloads/blazor) to check out our other controls.
 
 If you have any queries or require clarifications, please let us know in the comments section below. You can also contact us through our [support forums](https://www.syncfusion.com/forums), [support portal](https://support.syncfusion.com/create), or [feedback portal](https://www.syncfusion.com/feedback/blazor-components?control=charts). We are always happy to assist you!
-
