@@ -1,64 +1,78 @@
-# How-to-wrap-the-title-of-Blazor-charts
+# How to Wrap the Title of a Syncfusion Blazor Chart
 
-This article explains how to wrap the chart title in Blazor chart.
+## Overview
 
-**Chart title wrap using TextOverFlow property**
+This sample demonstrates how to wrap long chart titles in a Syncfusion [Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts) component when the title text exceeds the available width. The implementation configures the chart title to automatically flow onto multiple lines instead of being truncated or overflowing beyond the chart area. This approach improves readability when displaying descriptive chart titles in dashboards, reports, and analytics applications.
 
-Title of the [Blazor chart](https://www.syncfusion.com/blazor-components/blazor-charts) project an easier understanding of the usage. I case of having multi-line title, you can wrap it by setting the [TextOverFlow](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.TextOverflow.html) property in ChartTitleStyle to [Wrap](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.TextOverflow.html#Syncfusion_Blazor_Charts_TextOverflow_Wrap).
+The sample uses the chart title styling API to control text overflow behavior and shows how the title is rendered when the available chart width is limited.
 
-The following code example illustrates this.
+## Key Features
 
-**C#**
+- Renders a chart using the `SfChart` component.
+- Sets a long title using the `Title` property to demonstrate overflow behavior.
+- Uses the `ChartTitleStyle` configuration element to customize title rendering.
+- Sets `TextOverflow="TextOverflow.Wrap"` to automatically wrap lengthy title text onto multiple lines.
+- Configures the primary X-axis using `ChartPrimaryXAxis`.
+- Sets `ValueType="ValueType.Category"` for category-based axis values.
+- Displays data using a `ChartSeries` component.
+- Uses `Type="ChartSeriesType.Column"` to render a column chart.
+- Binds chart data through the `DataSource` property.
+- Maps category and value fields using the `XName` and `YName` properties.
+- Demonstrates data binding with a `ChartData` model containing `X` and `Y` properties.
 
-```cshtml
+## Prerequisites
 
-@using Syncfusion.Blazor.Charts
+1. [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+2. [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet) compatible with the project's target framework
 
-<SfChart Width="500px" Title="This Example shows how to wrap the chart title to next line in case of overflow">
+## How to Run the Project
 
-    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
-    <ChartTitleStyle TextOverflow="TextOverflow.Wrap"></ChartTitleStyle>
-    <ChartSeriesCollection>
-        <ChartSeries DataSource="@MedalDetails" XName="X" YName="Y" Type="ChartSeriesType.Column" >
-        </ChartSeries>
-    </ChartSeriesCollection>
+**Visual Studio 2022**
 
-</SfChart>
+1. Clone or download this repository.
+2. Open the project file:
 
-@code {
+   `TitleWrap.csproj`
 
-    public class ChartData
-    {
-        public string X { get; set; }
-        public double Y { get; set; }
-    }
+3. Restore NuGet packages.
+4. Build the project.
+5. Run the application using `Ctrl+F5`.
 
-    public List<ChartData> MedalDetails = new List<ChartData>
-    {
-        new ChartData { X= "South Korea", Y= 39.4 },
-        new ChartData { X= "India", Y= 61.3 },
-        new ChartData { X= "Pakistan", Y= 20.4 },
-        new ChartData { X= "Germany", Y= 65.1 },
-        new ChartData { X= "Australia", Y= 15.8 },
-        new ChartData { X= "Italy", Y= 29.2 },         
-    };
-}
+**Visual Studio Code**
 
+1. Clone or download this repository.
+2. Open the repository folder in Visual Studio Code.
+3. Open the integrated terminal.
+4. Navigate to the project directory:
+
+```bash
+cd TitleWrap
 ```
 
-The following screenshot illustrate the output of the above code snippet.
+5. Restore NuGet packages:
 
-**Output:**
+```bash
+dotnet restore
+```
 
-![](/Title-Wrap.png)
+6. Run the application:
 
-**Conclusion**
+```bash
+dotnet run
+```
 
-I hope you enjoyed learning how to wrap the title in Blazor Chart Component.
+7. Open the local URL displayed in the console output.
 
-You can refer to our [Blazor Chart feature tour](https://www.syncfusion.com/blazor-components/blazor-charts) page to know about its other groundbreaking feature representations and [documentation](https://blazor.syncfusion.com/documentation/chart/getting-started), and how to quickly get started for configuration specifications. You can also explore our [Blazor Chart example](https://blazor.syncfusion.com/demos/chart/line?theme=bootstrap5) to understand how to create and manipulate data.
+## Project Structure
 
-For current customers, you can check out our components from the [License and Downloads](https://www.syncfusion.com/sales/teamlicense) page. If you are new to Syncfusion, you can try our 30-day [free trial](https://www.syncfusion.com/downloads/blazor) to check out our other controls.
+`Pages/Index.razor` - Demonstrates the `SfChart` implementation, chart title configuration, and title wrapping behavior.
 
-If you have any queries or require clarifications, please let us know in the comments section below. You can also contact us through our [support forums](https://www.syncfusion.com/forums), [support portal](https://support.syncfusion.com/create), or [feedback portal](https://www.syncfusion.com/feedback/blazor-components?control=charts). We are always happy to assist you!
+## Support and Feedback
 
+- For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
+- To report an issue specific to this sample, open a GitHub issue in this repository.
+- For documentation related to chart titles and title customization, see the Syncfusion Blazor Chart documentation: https://help.syncfusion.com/chart-sdk/blazor/charts/getting-started-with-web-app
+
+## License
+
+This is a Syncfusion sample project provided to demonstrate product usage. Review the [Syncfusion license terms](https://www.syncfusion.com/sales/pricing?category=ui-components) before using Syncfusion components in your own applications.
